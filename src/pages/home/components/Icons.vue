@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="page of pages" :key="page.index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -16,70 +16,20 @@
 <script>
 export default {
   name: "HomeIcons",
-  data() {
-    return {
-      iconList: [
-        {
-          id: "0001",
-          imgUrl:
-            "https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png",
-          desc: "民宿客栈"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://picbed.qunarzz.com/83af731055e121a3251690b225327b56.png",
-          desc: "专车自驾"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "https://picbed.qunarzz.com/5b6737be49ca243072ca614f07803b83.png",
-          desc: "赚钱·信用卡"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png",
-          desc: "旅游团购"
-        },
-        {
-          id: "0005",
-          imgUrl:
-            "https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png",
-          desc: "旅游团购"
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png",
-          desc: "旅游团购"
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png",
-          desc: "旅游团购"
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png",
-          desc: "旅游团购"
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "https://picbed.qunarzz.com/3a08f360e958ccb2b947049387873ace.png",
-          desc: "借钱"
-        }
-      ]
-    };
+  props:{
+    list:Array
+  },
+  data(){
+    return{
+      swiperOption:{
+        autoplay:false
+      }
+    }
   },
   computed: {
     pages() {
       const pages = [];
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8);
         if (!pages[page]) {
           pages[page] = [];
