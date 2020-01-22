@@ -20,7 +20,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl';
 .list{
-    display flex
+    display flex 
     flex-direction column
     justify-content center
     position absolute
