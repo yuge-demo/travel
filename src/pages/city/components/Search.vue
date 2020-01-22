@@ -20,10 +20,10 @@ export default {
 }
 
 .search-input {
-    box-sizing  border-box
+  box-sizing: border-box;
   height: 0.62rem;
   line-height: 0.62rem;
-  padding  0 .1rem
+  padding: 0 0.1rem;
   width: 100%;
   text-align: center;
   border-radius: 0.06rem;
