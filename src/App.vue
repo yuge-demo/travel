@@ -5,10 +5,10 @@
       <!-- <router-link to="/about">About</router-link> -->
     </div>
     <!-- 显示的是当前路由地址所对应的内容 -->
-    <router-view/>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
-<style lang="stylus">
-
-</style>
+<style lang="stylus"></style>
