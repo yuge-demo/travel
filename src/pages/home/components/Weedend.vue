@@ -2,7 +2,13 @@
   <div>
     <div class="recommend-title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link
+        tag="li"
+        to="/detail/ + item.id"
+        class="item border-bottom"
+        v-for="item of list"
+        :key="item.id"
+      >
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
@@ -11,7 +17,7 @@
           <p class="item-desc">{{item.desc}}</p>
           <!-- <button class="item-button">查看详情</button> -->
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -19,15 +25,14 @@
 <script>
 export default {
   name: "HomeWeedend",
-  props:{
-    list:Array
+  props: {
+    list: Array
   }
 };
 </script>
 
 <style lang="stylus" scoped>
 @import '~@/assets/styles/mixins.styl';
-
 
 .recommend-title {
   line-height: 0.8rem;
@@ -44,8 +49,9 @@ export default {
 .item-img {
   width: 100%;
 }
-.item-info{
-    padding .1rem
+
+.item-info {
+  padding: 0.1rem;
 }
 
 .item-title {

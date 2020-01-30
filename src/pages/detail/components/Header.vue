@@ -27,6 +27,7 @@ export default {
       if (top > 60) {
         let opacity = top / 140;
         opacity = opacity > 1 ? 1 : opacity;
+        //进行新的赋值
         this.opacityStyle = {
           opacity
         };
